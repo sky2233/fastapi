@@ -1,0 +1,67 @@
+{% extends "main.html" %}
+
+{% block title %}File Results{% endblock %}
+
+{% block content %}
+{{ block.super }}
+<body>
+    <div>
+        <h2>File Details</h2>
+        <table class="table table-bordered">
+            <thead class="thead">
+                <tr>
+                    <th>Id</th>
+                    <th>Type</th>
+                    <th>Names</th>
+                    <th>Date</th>
+                    <th>Score</th>
+                    <th>Reputation</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>{{filehash.id}}</td>
+                <td>{{filehash.type}}</td>
+                <td>{{filehash.name}}</td>
+                <td>{{filehash.date}}</td>
+                <td>{{filehash.score}}</td>
+                <td>{{filehash.reputation}}</td>
+                <td>{{filehash.tags}}</td>
+            </tr>
+        </table>
+    </div>
+    {% if not exeParents %}
+        <div><h3>No Communicating Files Found</h3></div>
+    {% else %}
+        <div>
+            <h2>Execution Parents</h2>
+            <div class="scrollTable">
+                <table class="table table-bordered">
+                    <thead class="thead">
+                        <tr>
+                            <th>File id</th>
+                            <th>Type</th>
+                            <th>Names</th>
+                            <th>Score</th>
+                            <th>Reputation</th>
+                            <th>Date</th>
+                            <th>Tags</th>
+                        </tr>
+                    </thead>
+                    {% for x in exeParents %}
+                    <tr>
+                        <td>{{x.file_id}}</td>
+                        <td>{{x.type}}</td>
+                        <td>{{x.names}}</td>
+                        <td>{{x.score}}</td>
+                        <td>{{x.reputation}}</td>
+                        <td>{{x.date}}</td>
+                        <td>{{x.tags}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    {% endif %}
+</body>
+{% endblock %}

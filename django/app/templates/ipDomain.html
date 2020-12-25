@@ -1,0 +1,91 @@
+{% extends "main.html" %}
+
+{% block title %}IP Domain Results{% endblock %}
+
+{% block content %}
+{{ block.super }}
+<body>
+    <div id="main">
+        <h2>IP Domain Details</h2>
+        <table class="table table-bordered">
+            <thead class="thead">
+                <tr>
+                    <th>Id</th>
+                    <th>Type</th>
+                    <th>Score</th>
+                    <th>Reputation</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>{{ipDomain.id}}</td>
+                <td>{{ipDomain.type}}</td>
+                <td>{{ipDomain.score}}</td>
+                <td>{{ipDomain.reputation}}</td>
+            </tr>
+        </table>
+    </div>
+    {% if not commFiles %}
+        <div><h3>No Communicating Files Found</h3></div>
+    {% else %}
+        <div>
+            <h2>Communicating Files</h2>
+            <div class="scrollTable">
+                <table class="table table-bordered">
+                    <thead class="thead">
+                        <tr>
+                            <th>File id</th>
+                            <th>Type</th>
+                            <th>Names</th>
+                            <th>Score</th>
+                            <th>Date</th>
+                            <th>Tags</th>
+                        </tr>
+                    </thead>
+                    {% for x in commFiles %}
+                    <tr>
+                        <td>{{x.file_id}}</td>
+                        <td>{{x.type}}</td>
+                        <td class="names">{{x.names}}</td>
+                        <td>{{x.score}}</td>
+                        <td>{{x.date}}</td>
+                        <td>{{x.tags}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    {% endif %}
+    {% if not refFiles %}
+        <div><h3>No Referring Files Found</h3></div>
+    {% else %}
+        <div>
+            <h2>Referring Files</h2>
+            <div class="scrollTable">
+                <table class="table table-bordered">
+                    <thead class="thead">
+                        <tr>
+                            <th>File id</th>
+                            <th>Type</th>
+                            <th>Names</th>
+                            <th>Score</th>
+                            <th>Date</th>
+                            <th>Tags</th>
+                        </tr>
+                    </thead>
+                    {% for x in refFiles %}
+                    <tr>
+                        <td>{{x.file_id}}</td>
+                        <td>{{x.type}}</td>
+                        <td class="names">{{x.names}}</td>
+                        <td>{{x.score}}</td>
+                        <td>{{x.date}}</td>
+                        <td>{{x.tags}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <br>
+    {% endif %}
+</body>
+{% endblock %}
