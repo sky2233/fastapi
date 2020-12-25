@@ -3,7 +3,6 @@
     {% load static %}
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
     <link rel="stylesheet" type="text/css" href="{% static '../static/bootstrap.css' %}"  media="all" >
-    <script src="bootstrap.js"></script>
     <title>{% block title %}Search{% endblock %}</title>
 </head>
 <style>
@@ -54,7 +53,6 @@
     <div class="search">
         <h2 style="margin-bottom: 5px; margin-top: 10px;">Search</h2>
         <form action="/search/get/" method="GET">
-            {% csrf_token %}
             {{ form }}
             <input type="text" id="searchValue" name="searchValue">
             <button type="submit" id="type" name="type" value="ipdomain">Search IP or Domain</button>

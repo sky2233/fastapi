@@ -422,8 +422,6 @@ async def getFiles(background_tasks: BackgroundTasks, filehash: str, db:Session 
         except Exception:
             pass
 
-        print(result)
-
         # values for file
         resultType = result["data"]["attributes"]["type_tag"]
         resultNames = result["data"]["attributes"]["names"]
@@ -459,7 +457,7 @@ async def getFiles(background_tasks: BackgroundTasks, filehash: str, db:Session 
             try:
                 nextExeLink = responseExe["links"]["next"]
             except Exception as error:
-                nextLink = ""
+                nextExeLink = ""
 
             # values for execution parents
             for element in responseExe["data"]:

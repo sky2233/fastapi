@@ -1,4 +1,4 @@
-# python project/manage.py runserver 8080
+# python django/manage.py runserver 8080
 # uvicorn api.main:app --reload
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
