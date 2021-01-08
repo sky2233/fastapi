@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    {% load static %}
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="{% static '../static/bootstrap.css' %}"  media="all" >
+    <link rel="stylesheet" type="text/css" href="{% static '../static/custom.css' %}"  media="all" >
+    <title>{% block title %}Search{% endblock %}</title>
+</head>
+<body>
+    
+    <!-- Navibar -->
+    <nav class="navbar navbar-dark" style="background-color: #252830;">
+        <h2><a href="/" class="link" style="padding-left: 40px;">VirusTotal</a></h2>
+        <a href="/admin" class="link" style="float: right; padding-right: 30px;">Admin</a>
+    </nav>
+    
+    {% block content %}
+    <div style="width: 60%; height: 100%; margin: auto; margin-top: 5%;">
+        <!-- Tab links -->
+        <div class="tabBtn">
+            <button class="tablinks active" onclick="changeTab(event, 'ipDomainTab')" id="defaultOpen">Ip Domain</button>
+            <button class="tablinks" onclick="changeTab(event, 'filesTab')">Files</button>
+        </div>
+        
+        <!-- Tab content -->
+        <div id="ipDomainTab" class="tabDiv" style="display: block;">
+            <h2>Ip or Domain Name</h2>
+            <form action="/get/" method="GET">
+                {{ form }}
+                <input type="text" id="searchValue" name="searchValue" >
+                <button class="websiteBtn" type="submit" id="type" name="type" value="ipdomain">Search</button>
+            </form>
+        </div>
+    
+        <div id="filesTab" class="tabDiv" style="display: none;">
+            <h2>Filehash</h2>
+            <form action="/get/" method="GET">
+                {{ form }}
+                <input type="text" id="searchValue" name="searchValue">
+                <button class="websiteBtn" type="submit" id="type" name="type" value="files">Search</button>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+
+</body>
+
+<script>
+    document.getElementById("defaultOpen").click();
+    function changeTab(event, element){
+
+        var ele = document.getElementById(element)
+        
+        tab = document.getElementsByClassName("tabDiv")
+        for (i = 0; i < tab.length; i++) {
+            tab[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(element).style.display = "block";
+        event.currentTarget.className += " active";
+    }
+</script>

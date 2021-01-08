@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+.thead {
+    background-color:#5d6478;
+    color: white;
+  }
+
+/* .scrollTable {
+    height:400px !important; 
+    overflow-y:scroll; 
+    display:block;
+} */
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #919191; 
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: auto;
+    width: 95%;
+}
+
+.scrollTable {
+    padding: 0px;
+    max-height: 500px !important; 
+    overflow-y: auto; 
+    display: block;
+    width: 100%;
+}
+table, td, th {
+    padding: 5px;
+}
+
+td {
+    max-width: 400px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table {
+    border-collapse: collapse;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 0px !important;
+    word-wrap: break-word;  
+}
+
+#searchValue {
+    width: 80%;
+    height: 30px;
+}
+
+.websiteBtn {
+    display: inline-block; 
+    background-color: #383d4b; 
+    color: #ffffff; 
+    border: transparent; 
+    border-radius: 4px; 
+    padding: 5px 10px;
+    margin-bottom: 8px; 
+    font-size: 16px;
+}
+
+.tabBtn {
+    overflow: hidden;
+    border: none;
+    background-color: #383d4b;
+    padding: 0px;
+}
+
+.tabBtn button {
+    background-color: #383d4b;
+    color: #ffffff;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    border: 1px solid #5a637a;
+    border-bottom: white;
+}
+  
+.tabBtn button:hover  {
+    background-color: #7699c7;
+}
+
+.tabBtn button.active {
+    background-color: whitesmoke;
+    color: navy;
+}
+  
+.tabDiv {
+    background-color: whitesmoke;
+    display: none;
+    padding: 12%;
+    border: 1px solid #252830;
+    border-top: none;
+}
+
+.link {
+    color: whitesmoke; 
+    text-decoration: none; 
+}
+
+.link:hover {
+    color: lightgray;
+}

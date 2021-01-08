@@ -20,11 +20,11 @@ def searchGet(request):
         if form.is_valid():
             type = form.cleaned_data['type']
             searchValue = form.cleaned_data['searchValue']
-            url = "/search/" + type + "/" + searchValue
+            url = "/" + type + "/" + searchValue
             return HttpResponseRedirect(url)
     else:
-        form - searchForm()
-    return render(request, template, {'form': form})
+        form = searchForm()
+    return render(request, template)
 
 def searchIp(request, searchValue):
     searchValue = searchValue

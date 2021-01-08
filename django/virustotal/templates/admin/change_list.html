@@ -1,0 +1,18 @@
+{% extends "admin/change_list.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href=" {% static "suit/css/suit.css" %}" />
+<link rel="stylesheet" type="text/css" href=" {% static "change_list.css" %}" />
+{% endblock %}
+
+{% block object-tools %}
+    <button id="webBtn" class="websiteBtn" onclick="location.href='/';" style="display: inline-block; 
+    background-color: #4195da; 
+    color: #ffffff; 
+    border: transparent; 
+    border-radius: 4px; 
+    padding: 5px 10px;
+    margin-bottom: 8px; 
+    font-size: 16px;">View Site</button>
+{% endblock %}

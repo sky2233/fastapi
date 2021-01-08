@@ -10714,31 +10714,4 @@ textarea.form-control-lg {
   }
 }
 
-.thead {
-  background-color: #DCDCDC;
-}
-.scrollTable {
-  height:300px !important; 
-  overflow-y:scroll; 
-  display:block;
-}
-/* width */
-::-webkit-scrollbar {
-  width: 15px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgb(145, 145, 145); 
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
 /*# sourceMappingURL=bootstrap.css.map */
